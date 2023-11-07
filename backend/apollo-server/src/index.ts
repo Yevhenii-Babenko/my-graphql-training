@@ -16,7 +16,7 @@ interface SchemaContext {
 
 const server = new ApolloServer<SchemaContext>({
   typeDefs,
-  resolvers,
+  resolvers, // functions => should return data according to our schema
   // plugins: [logger],
 });
 
