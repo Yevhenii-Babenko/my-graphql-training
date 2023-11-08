@@ -46,6 +46,20 @@ export default `#graphql
     city: City
     zipcode: String
   }
+  
+  type Photo {
+    albumId: ID!
+    id: ID!
+    title: String
+    url: String
+    thumbnailUrl: String
+  }
+  
+  type Album {
+    userId: ID!
+    id: ID!
+    title: String
+  }
 
   enum City {
     LVIV
@@ -60,6 +74,11 @@ export default `#graphql
     comments: [Comment]
     authors: [Author]
     authorsByCity(city: City!): [Author]
+    photos: [Photo]
+    photo(id: Int!): Photo
+    albums: [Album]
+    album(id: Int!): Album
+    photosInAlbum(albumId: Int!): [Photo]
   }
 
   type Mutation {

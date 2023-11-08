@@ -1,6 +1,8 @@
 import { RESTDataSource } from '@apollo/datasource-rest';
 
-export class Albums extends RESTDataSource {
+// albums: [Album]
+// album(id: ID!): Album!
+export class AlbumsAPI extends RESTDataSource {
     constructor() {
         super();
         this.baseURL = 'https://jsonplaceholder.typicode.com/';
@@ -11,7 +13,7 @@ export class Albums extends RESTDataSource {
     }
 
     async getAlbumById(id: number) {
-        return await this.get(`albums${id}`)
+        return await this.get(`albums/${id}`)
     }
 
 }
