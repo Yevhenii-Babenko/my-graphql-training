@@ -91,6 +91,9 @@ export default `#graphql
     createAlbum(createAlbumInput: CreateAlbumInput!): Album
     updateAlbum(id: Int!, updateAlbumInput: UpdateAlbumInput!): Album
     deleteAlbum(id: ID!): Boolean
+    createPhoto(albumId: ID!, createPhotoInput: CreatePhotoInput!): Photo
+    updatePhoto(id: ID!, updatePhotoInput: UpdatePhotoInput!): Photo
+    deletePhoto(id: ID!): Boolean
   }
 
   type Subscription {
@@ -127,5 +130,19 @@ export default `#graphql
   input UpdateAlbumInput {
     userId: Int
     title: String
+  }
+  
+  input CreatePhotoInput {
+    albumId: Int!
+    title: String!
+    url: String!
+    thumbnailUrl: String!
+  }
+  
+  input UpdatePhotoInput {
+    albumId: Int
+    title: String
+    url: String
+    thumbnailUrl: String
   }
 `;
