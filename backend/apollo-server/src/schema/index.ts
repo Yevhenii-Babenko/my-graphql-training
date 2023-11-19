@@ -88,6 +88,9 @@ export default `#graphql
     createComment(postId: ID!, createCommentInput: CreateCommentInput!): Comment
     updateComment(id: ID!, updateCommentInput: UpdateCommentInput!): Comment
     deleteComment(id: ID!): Boolean
+    createAlbum(createAlbumInput: CreateAlbumInput!): Album
+    updateAlbum(id: Int!, updateAlbumInput: UpdateAlbumInput!): Album
+    deleteAlbum(id: ID!): Boolean
   }
 
   type Subscription {
@@ -114,5 +117,15 @@ export default `#graphql
     name: String
     email: String
     body: String
+  }
+  
+  input CreateAlbumInput {
+    userId: Int!
+    title: String!
+  }
+  
+  input UpdateAlbumInput {
+    userId: Int
+    title: String
   }
 `;
