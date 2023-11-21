@@ -90,7 +90,7 @@ export default `#graphql
     deleteComment(id: ID!): Boolean
     createAlbum(createAlbumInput: CreateAlbumInput!): Album
     updateAlbum(id: Int!, updateAlbumInput: UpdateAlbumInput!): Album
-    deleteAlbum(id: ID!): Boolean
+    deleteAlbum(id: ID!): Album
     createPhoto(albumId: ID!, createPhotoInput: CreatePhotoInput!): Photo
     updatePhoto(id: ID!, updatePhotoInput: UpdatePhotoInput!): Photo
     deletePhoto(id: Int!): Photo
