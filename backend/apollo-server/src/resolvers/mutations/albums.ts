@@ -11,11 +11,11 @@ const createAlbum = (album, {createAlbumInput}, {dataSources}, info) => {
 }
 
 const updateAlbum =  (album, {id, updateAlbumInput}, {dataSources}, info) => {
-    return dataSources.albumsAPI.updateAlbum(id, updateAlbumInput);
+    return dataSources.albumsAPI.updateAlbum(id, updateAlbumInput) || {id,...updateAlbumInput}; // jsonPlaceholder returns null in this particular case
 }
 
-const deleteAlbum = (album, {id}, {dataSources}, info)=> {
-    return dataSources.albumsAPI.deleteAlbum(id);
+const deleteAlbum = (album, {id}, {dataSources}, info)=> {dataSources.albumsAPI.deleteAlbum(id);
+    return {id}
 }
 
 export {createAlbum, updateAlbum, deleteAlbum};
