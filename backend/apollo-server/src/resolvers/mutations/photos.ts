@@ -9,12 +9,15 @@ const createPhoto = (photo, {createPhotoInput}, {dataSources}, info) => {
     return {id: '101', ...createPhotoInput}
 };
 
-const updatePhoto = (photo, {id, createPhotoInput}, {dataSources}, info) => {
-    return dataSources.photosAPI.updatePhoto(id, createPhotoInput);
+const updatePhoto = (photo, {id, updatePhotoInput}, {dataSources}, info) => {
+    // return dataSources.photosAPI.updatePhoto(id, updatePhotoInput); => mocked as jsonPlaceholder returns null
+    return {id, ...updatePhotoInput}
 };
 
 const deletePhoto = (photo, {id}, {dataSources}, info) => {
-    return dataSources.photosAPI.deletePhoto(id);
-};
+    dataSources.photosAPI.deletePhoto(id);
+    // let's return an id as it returns null
+    return {id};
+}
 
 export {createPhoto, updatePhoto, deletePhoto}
