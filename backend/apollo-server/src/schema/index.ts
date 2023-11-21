@@ -93,7 +93,7 @@ export default `#graphql
     deleteAlbum(id: ID!): Boolean
     createPhoto(albumId: ID!, createPhotoInput: CreatePhotoInput!): Photo
     updatePhoto(id: ID!, updatePhotoInput: UpdatePhotoInput!): Photo
-    deletePhoto(id: ID!): Boolean
+    deletePhoto(id: Int!): Photo
   }
 
   type Subscription {
