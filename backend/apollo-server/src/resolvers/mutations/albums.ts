@@ -11,7 +11,8 @@ const createAlbum = (album, {createAlbumInput}, {dataSources}, info) => {
 }
 
 const updateAlbum =  (album, {id, updateAlbumInput}, {dataSources}, info) => {
-    return dataSources.albumsAPI.updateAlbum(id, updateAlbumInput) || {id,...updateAlbumInput}; // jsonPlaceholder returns null in this particular case
+    // dataSources.albumsAPI.updateAlbum(id, updateAlbumInput)
+    return {id,...updateAlbumInput}; // jsonPlaceholder returns null in this particular case
 }
 
 const deleteAlbum = (album, {id}, {dataSources}, info)=> {dataSources.albumsAPI.deleteAlbum(id);
