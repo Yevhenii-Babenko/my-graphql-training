@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CommentsModule } from './comments/comments.module';
 import { PostsModule } from './posts/posts.module';
+import { AlbumsModule } from "./albums/albums.module";
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { PostsModule } from './posts/posts.module';
     }),
     PostsModule,
     CommentsModule,
+    AlbumsModule,
   ],
   controllers: [],
   providers: [],
